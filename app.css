@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --txt-color: #323238;
+  --btn-background: #e1e1e6;
+  --btn-active-background: #02799d;
+  --btn-color: #323238;
+  --btn-active-color: #ffffff;
+
+  font-size: 62.5%;
+}
+
+.dark-mode {
+  --bg-color: #121214;
+  --txt-color: #ffffff;
+  --txt-active-color: #ffffff;
+  --btn-background: #29292e;
+  --btn-active-background: #0a3442;
+  --btn-color: #c4c4cc;
+  --btn-active-color: #ffffff;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  background: var(--bg-color);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 32.1rem 30.8rem;
+  place-items: center;
+  gap: clamp(3rem, 3rem + 10vw, 19.2rem);
+}
+
+.theme {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+
+.time {
+  display: flex;
+  font-size: 12.6rem;
+  color: var(--txt-color);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.controls button {
+  color: var(--btn-color);
+}
+
+.sounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+}
+
+.sounds button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-background);
+  color: var(--btn-color);
+  border-radius: 2.4rem;
+  width: 13.6rem;
+  height: 15.2rem;
+}
+
+.sounds button.active {
+  background-color: var(--btn-active-background);
+  color: var(--btn-active-color);
+}
+
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+  .sounds button {
+    width: 6rem;
+    height: 6rem;
+  }
+  .sounds svg {
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media (max-width: 390px) {
+  .time {
+    font-size: 8.6rem;
+    justify-content: center;
+  }
+  .app,
+  .controls {
+    gap: 2rem;
+  }
+  .sounds {
+    justify-content: center;
+    gap: 1.2rem;
+  }
+}
